@@ -1,6 +1,15 @@
 <!-- database -->
 <?php  
   include_once "../databases/config.php"; 
+  
+  // Check if user is trying to access auth pages (login, register, etc.)
+  $page = isset($_GET['page']) ? $_GET['page'] : 'default';
+  
+  // If not accessing auth pages, check authentication
+  if ($page !== 'auth') {
+      include "src/auth/check_auth.php"; 
+      checkAdminAuth();
+  }
 ?>
 
 <!DOCTYPE html>

@@ -9,7 +9,7 @@
         // Check if there's an 'id' parameter in the URL
         if (isset($_GET['id']) && isset($_GET['doctors'])) {
             // Route to profile.php when an ID is present
-            $pageFile = "src/pages/default/profile.php";
+            $pageFile = "src/pages/default/doctor_detail.php";
         } else {
             // Original routing logic for when no ID is present
             $subpage = array_keys($_GET);
@@ -17,7 +17,12 @@
             $subpage = reset($subpage); // Get the first subpage key, e.g., 'dashboards'
             $subpage = $subpage ? $subpage : 'dashboards'; // Default to 'dashboards' if not set
 
-            $pageFile = "src/pages/default/" . strtolower($subpage) . ".php";
+            // Handle delete_doctor as a special case
+            if ($subpage === 'delete_doctor') {
+                $pageFile = "src/pages/default/delete_doctor.php";
+            } else {
+                $pageFile = "src/pages/default/" . strtolower($subpage) . ".php";
+            }
         }
         
         if (file_exists($pageFile)) {

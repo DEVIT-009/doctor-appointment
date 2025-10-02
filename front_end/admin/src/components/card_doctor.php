@@ -24,13 +24,12 @@ if (mysqli_num_rows($result) > 0) {
                         <i class='fa fa-ellipsis-v'></i>
                     </a>
                     <div class='dropdown-menu dropdown-menu-right'>
-                        <a class='dropdown-item' href='index.php?page=default&edit_doctor'>
+                        <a class='dropdown-item' href='index.php?page=default&edit_doctor&id=" . $row['doctor_id'] . "'>
                             <i class='fa fa-pencil m-r-5'></i> Edit</a>
                         <a
                             class='dropdown-item'
                             href='#'
-                            data-toggle='modal'
-                            data-target='#delete_doctor'
+                            onclick='confirmDelete(" . $row['doctor_id'] . ", \"" . htmlspecialchars($row['doctor_name']) . "\")'
                             >
                             <i class='fa fa-trash-o m-r-5'></i> 
                             Delete

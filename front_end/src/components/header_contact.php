@@ -9,8 +9,8 @@
             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
             <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            <a href="admin" target="_blank" class="admin">
-                <i class="bi bi-person-fill-gear"></i><!-- To admin page -->
+            <a href="admin?page=auth&login" target="_blank" class="admin">
+                <i class="bi bi-person-fill-gear"></i><!-- To admin login -->
             </a>
         </div>
     </div>

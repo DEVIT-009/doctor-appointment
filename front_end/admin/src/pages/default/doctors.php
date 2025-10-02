@@ -24,3 +24,14 @@
     </div>
     </div>
 </div>
+
+
+<script>
+
+function confirmDelete(doctorId, doctorName) {
+    if (confirm('Are you sure you want to delete doctor: ' + doctorName + '?')) {
+        // Direct URL approach - much simpler
+        window.location.href = 'index.php?page=default&delete_doctor&doctor_id=' + doctorId;
+    }
+}
+</script>
